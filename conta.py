@@ -1,5 +1,3 @@
-
-
 class Conta:
     # método construtor
     def __init__(self, agencia, numero, titular, saldo, senha):
@@ -29,9 +27,5 @@ class Conta:
             return False
         
     def pix(self, valor, conta):
-        if self.__saldo >= valor and valor > 0:
-            self.__saldo -= valor
-            conta.__saldo += valor
-            return True
-        else:
-            return False
+        self.saque(valor)
+        conta.deposito(valor)
