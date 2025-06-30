@@ -17,22 +17,14 @@ def lerArquivo():
             conta = Conta(int(linha[0]), int(linha[1]),linha[2],float(linha[3]), linha[4])
             contas.append(conta)
 
-lerArquivo()
-print(contas)
-
-def lerDadosUsuario():
-    agencia = int(input("Digite a agência: "))
-    numero_conta = int(input("Digite sua conta corrente: "))
-    senha = getpass.getpass("Digite a senha: ")
-
-# Encontrar a conta corrente na lista de contas
-
 def encontrarContaCorrente():
+    global contaEncontrada
     for conta in contas:
         if numero_conta == conta.numero:
             contaEncontrada = Conta(conta.agencia, conta.numero, conta.titular, conta.saldo, conta.senha)
 
 def verificarAcesso():
+    global contaEncontrada
     if contaEncontrada == None: # verifica se a conta é Nula (inexistente)
         print("Dados incorretos")
     else:
@@ -41,6 +33,11 @@ def verificarAcesso():
             print("Acesso liberado")
         else:
             print("Dados incorretos")
+
+def lerDadosUsuario():
+    agencia = int(input("Digite a agência: "))
+    numero_conta = int(input("Digite sua conta corrente: "))
+    senha = getpass.getpass("Digite a senha: ")
 
 lerArquivo()
 lerDadosUsuario()
