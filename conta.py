@@ -18,11 +18,15 @@ class Conta:
     
     @property
     def titular(self):
-        return self.__titular
+        return self.__titular 
     
     @property
     def senha(self):
         return self.__senha
+    
+    @property
+    def saldo(self):
+        return self.__saldo
 
     def extrato(self):
         return self.__saldo
@@ -40,3 +44,7 @@ class Conta:
             return True
         else:
             return False
+        
+    def pix (self, valor, conta):
+        self.saque(valor)
+        conta.deposito(valor)
