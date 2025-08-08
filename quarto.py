@@ -10,7 +10,7 @@ class Quarto:
         print(f"Tipo: {self.__tipo}")
         print(f"Preço: {self.__preco}")
         if self.__disponivel:
-            print("Quarto livre")
+            print("Quarto liberado")
         else:
             print("Quarto ocupado")
     
@@ -24,7 +24,7 @@ class Quarto:
     def liberar(self):
      if self.__disponivel == False:
         self.__disponivel = True
-        print(f"Tá liberado pra ser reservado")
+        print(f"Quarto liberado")
      else:
-        print("Reservado com sucesso!!!!!!!!!!!!!")
+        print("Quarto reservado com sucesso!")
             
