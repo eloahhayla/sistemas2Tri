@@ -27,4 +27,7 @@ class Quarto:
         print(f"Quarto liberado")
      else:
         print("Quarto reservado com sucesso!")
-            
+
+    def alterar_preco(self, preco):
+        self.__preco = preco
+        print(f"Preço novo: {self.__preco}")
