@@ -4,22 +4,6 @@ class Quarto:
         self.__tipo = tipo
         self.__preco = preco
         self.__disponivel = disponivel
-    
-    @property
-    def numero(self):
-        return self.__numero
-    
-    @property
-    def tipo(self):
-        return self.__tipo
-    
-    @property
-    def preco(self):
-        return self.__preco
-
-    @property
-    def disponivel(self):
-        return self.__disponivel
 
     def exibir_detalhes(self):
         print(f"Numero do quarto: {self.__numero}")
@@ -29,7 +13,18 @@ class Quarto:
             print("Quarto livre")
         else:
             print("Quarto ocupado")
+    
+    def reservar(self):
+        if self.__disponivel == True:
+            self.__disponivel = False
+            print(f"Reserva efetuada")
+        else:
+            print("Não foi possivel reservar, quarto ocupado.")
 
-
-quarto1 = Quarto(101, "solteiro", 200.0, True)
-quarto1.exibir_detalhes()
+    def liberar(self):
+     if self.__disponivel == False:
+        self.__disponivel = True
+        print(f"Tá liberado pra ser reservado")
+     else:
+        print("Reservado com sucesso!!!!!!!!!!!!!")
+            
